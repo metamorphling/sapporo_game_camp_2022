@@ -13,7 +13,7 @@ public class MoveController : MonoBehaviour
 
     private void Start()
     {
-        moveSpeed = 1.0f;
+        moveSpeed = 0.5f;
         _rigidbody = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
 #if DEBUG
