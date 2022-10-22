@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class MasterData : MonoBehaviour
 {
+    public static MasterData Instance;
+
+    public void Awake()
+    {
+        Instance = this;
+    }
+
     public CharacterParameters.Data Player_Host;
     public CharacterParameters.Data Player_Woman;
     public CharacterParameters.Data Player_Sheep;
@@ -20,7 +27,7 @@ public class MasterData : MonoBehaviour
     public CharacterParameters.Data Enemy_Host_Lvl3;
     public CharacterParameters.Data Enemy_Woman_Lvl3;
     public CharacterParameters.Data Enemy_Sheep_Lvl3;
-    public CharacterParameters.Data Enemy_Boss_Lvl;
+    public CharacterParameters.Data Enemy_Boss_Lvl3;
 
 
 }

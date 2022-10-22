@@ -113,6 +113,11 @@ public class DrawSpawn : MonoBehaviour
         else
         {
             var obj = Instantiate(selectedCharas[0], spawnPosition, Quaternion.identity);
+            var param = obj.GetComponent<CharacterParameters>();
+            if (param)
+            {
+                param.Init(true, 0);
+            }
             selectedCharas.RemoveAt(0); // 生成されたキャラクターを削除
             isSpawned = true;
             spawnedPosition = GetMouseRaycastHitPosition(); // 生成されたポジションを格納
