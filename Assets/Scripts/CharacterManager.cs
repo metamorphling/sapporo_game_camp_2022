@@ -6,8 +6,6 @@ using UnityEngine;
 public class CharacterManager : MonoBehaviour
 {
     public List<CharacterInfo> Characters = new List<CharacterInfo>();
-    public GameObject IconContainer;
-    public GameObject CharacterIconBox;
 
     public static CharacterManager Instance => _instance;
 
@@ -27,12 +25,12 @@ public class CharacterManager : MonoBehaviour
 
     public void Init()
     {
-        foreach (var item in Characters)
-        {
-            if (item.IsUnlocked)
-            {
-                GameObject.Instantiate(CharacterIconBox, IconContainer.transform);
-            }
-        }
+        //foreach (var item in Characters)
+        //{
+        //    if (item.IsUnlocked)
+        //    {
+        //        GameObject.Instantiate(CharacterIconBox, IconContainer.transform);
+        //    }
+        //}
     }
 }
