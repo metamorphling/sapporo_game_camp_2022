@@ -45,6 +45,9 @@ public class DrawSpawn : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// キャラクターセレクト関数
+    /// </summary>
     void SelectCharacters()
     {
         if(selectedCharas.Count == selectLimit) return;
@@ -91,7 +94,12 @@ public class DrawSpawn : MonoBehaviour
     /// </summary>
     void GenerateCharacter(Vector3 spawnPosition)
     {
-        if(selectedCharas.Count() == 0) return;
+        // キャラがセレクトされていない場合リターン
+        if(selectedCharas.Count() == 0)
+        {
+            spawnindex = 0;
+            return;
+        }
 
         if(isSpawned)
         {
@@ -104,18 +112,11 @@ public class DrawSpawn : MonoBehaviour
         }
         else
         {
-            var obj = Instantiate(charas[spawnindex], spawnPosition, Quaternion.identity);
-            if(spawnindex == selectedCharas.Count())
-            {
-                selectedCharas.Clear();
-                spawnindex = 0;
-            }
-            spawnindex++;
+            var obj = Instantiate(selectedCharas[0], spawnPosition, Quaternion.identity);
+            selectedCharas.RemoveAt(0); // 生成されたキャラクターを削除
             isSpawned = true;
-            spawnedPosition = GetMouseRaycastHitPosition();
+            spawnedPosition = GetMouseRaycastHitPosition(); // 生成されたポジションを格納
         }
-        
-        Debug.Log(spawnedPosition.sqrMagnitude);
     }
  
     // void OnDrawGizmos()
