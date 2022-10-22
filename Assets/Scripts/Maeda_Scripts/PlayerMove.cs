@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Start()
     {
-        moveSpeed = 0.3f;
+        moveSpeed = 1.0f;
         _rigidbody = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
     }
@@ -23,13 +23,13 @@ public class PlayerMove : MonoBehaviour
 
         if (target.Length > 0)
         {
-            tmpVec = Vector3.MoveTowards(tmpVec, target[0].transform.position, moveSpeed);
-            this.gameObject.transform.position = tmpVec;
             distans = Vector3.Distance(tmpVec, target[0].transform.position);
-            if(distans < 5)
+            if(distans > 15)
             {
-                this.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                target[0].transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z );
+                tmpVec = Vector3.MoveTowards(tmpVec, target[0].transform.position, moveSpeed);
+                this.gameObject.transform.position = tmpVec;
+                //this.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                //target[0].transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z );
             }
         }
         else
