@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 62249862889686193}
   - component: {fileID: 62249862889686205}
   - component: {fileID: 2559315558860753793}
+  - component: {fileID: 459335378952462462}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -133,3 +134,20 @@ MonoBehaviour:
   capsuleCollider: {fileID: 62249862889686193}
   AttackRange: 15
   IsPlayer: 1
+--- !u!114 &459335378952462462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62249862889686194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b440911320dfeb44095d5b2181260e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameters:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
