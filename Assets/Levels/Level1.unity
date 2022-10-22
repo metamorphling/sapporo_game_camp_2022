@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 148368588}
   - component: {fileID: 148368587}
+  - component: {fileID: 148368589}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -180,6 +181,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &148368589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148368586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62a9aff766f8b24193098dc93208690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 8074497030580959016, guid: fc77eff17e02253479171c32bf37d494, type: 3}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spawnInterval: 2
+  parentObj: {fileID: 0}
 --- !u!1 &264905566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4198819262089346124, guid: 7fb793affb40e9a49a00f99c474390e6, type: 3}
