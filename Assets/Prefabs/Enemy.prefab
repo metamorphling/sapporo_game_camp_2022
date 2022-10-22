@@ -14,11 +14,7 @@ GameObject:
   - component: {fileID: 8074497030580959021}
   - component: {fileID: 8074497030580959019}
   - component: {fileID: 9181419266935458950}
-<<<<<<< Updated upstream
   - component: {fileID: -6939340856904937271}
-=======
-  - component: {fileID: 3752716205014674340}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -138,20 +134,13 @@ MonoBehaviour:
   capsuleCollider: {fileID: 8074497030580959021}
   AttackRange: 15
   IsPlayer: 0
-<<<<<<< Updated upstream
 --- !u!114 &-6939340856904937271
 MonoBehaviour:
-=======
---- !u!95 &3752716205014674340
-Animator:
-  serializedVersion: 4
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8074497030580959016}
-<<<<<<< Updated upstream
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b440911320dfeb44095d5b2181260e2d, type: 3}
@@ -162,17 +151,3 @@ Animator:
     Damage: 0
     MoveSpeed: 0
     AttackSpeed: 0
-=======
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
->>>>>>> Stashed changes
