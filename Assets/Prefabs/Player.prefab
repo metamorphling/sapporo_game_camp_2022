@@ -95,7 +95,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62249862889686194}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -129,11 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0641d76ef0a26448b79fbf40ffed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
   _rigidbody: {fileID: 62249862889686205}
   capsuleCollider: {fileID: 62249862889686193}
-  AttackRange: 15
   IsPlayer: 1
+  Info: {fileID: 459335378952462462}
 --- !u!114 &459335378952462462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +150,7 @@ MonoBehaviour:
     Damage: 0
     MoveSpeed: 0
     AttackSpeed: 0
+    AttackRange: 0
     DropResource: 0
     DropRate: 0
   Type: 2

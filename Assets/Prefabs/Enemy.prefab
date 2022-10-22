@@ -129,11 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0641d76ef0a26448b79fbf40ffed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
   _rigidbody: {fileID: 8074497030580959019}
   capsuleCollider: {fileID: 8074497030580959021}
-  AttackRange: 15
   IsPlayer: 0
+  Info: {fileID: -6939340856904937271}
 --- !u!114 &-6939340856904937271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,3 +150,7 @@ MonoBehaviour:
     Damage: 0
     MoveSpeed: 0
     AttackSpeed: 0
+    AttackRange: 0
+    DropResource: 0
+    DropRate: 0
+  Type: 0

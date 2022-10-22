@@ -2,8 +2,12 @@ using UnityEngine;
 
 public static class FightManager
 {
-    public static void Fight(/*A,B*/)
+    public static void Fight(CharacterParameters.Data source, CharacterParameters.Data target)
     {
-        /*Deal Damage*/
+        target.Health = target.Health - source.Damage;
+    }
+    public static void Fight(CharacterParameters.Data source, CastleParameters.Data target)
+    {
+        target.Health = target.Health - source.Damage;
     }
 }

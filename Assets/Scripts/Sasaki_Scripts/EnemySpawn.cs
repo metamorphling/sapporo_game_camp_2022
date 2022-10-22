@@ -12,7 +12,7 @@ public class EnemySpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        countTime = spawnInterval;
     }
 
     // Update is called once per frame
@@ -31,6 +31,11 @@ public class EnemySpawn : MonoBehaviour
         foreach(var a in spawnPoints)
         {
             var obj = Instantiate(enemy, a.transform.position, enemy.transform.rotation);
+            var param = obj.GetComponent<CharacterParameters>();
+            if (param)
+            {
+                param.Init(false, Game.Level);
+            }
             parentObj.transform.parent = a.transform;
         }
         

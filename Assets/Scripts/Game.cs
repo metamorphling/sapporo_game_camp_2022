@@ -6,6 +6,7 @@ public class Game
     public static GameObject[] Enemies { get; set; }
     public static GameObject[] Players { get; set; }
     public static CharacterType ChosenType;
+    public static int Level = 1;
 
     private static readonly Game _instance = new Game();
 
@@ -17,6 +18,7 @@ public class Game
     public static void StartGame()
     {
         _instance.GameState = GameState.Playing;
+        Level = 1;
     }
 
     public static void Win()

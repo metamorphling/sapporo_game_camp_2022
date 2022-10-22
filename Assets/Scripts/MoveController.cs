@@ -8,33 +8,37 @@ public class MoveController : MonoBehaviour
         ATTAKING,
         DEAD
     }
-    public float moveSpeed;
     public Rigidbody _rigidbody;
-    public CapsuleCollider capsuleCollider;
-    public float AttackRange;
+    public Collider capsuleCollider;
     public bool IsPlayer;
+    public CharacterParameters Info;
 
-    Vector3 tmpVec;
     float distance;
     Animator _anim;//s
     ENEMY_STATE state;//s
     int hashAttak = Animator.StringToHash("IsAttack");//s
+    float attackCooldown;
 
     private void Start()
     {
-        moveSpeed = 0.5f;
         _rigidbody = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         _anim = this.GetComponent<Animator>();
 
         state = ENEMY_STATE.SEARCH; // プレイヤーを探索するステートに設定
-#if DEBUG
-        AttackRange = 15;
-#endif
     }
     private void Update()
     {
-        tmpVec = this.gameObject.transform.position;
+        if (Info == null || Info.IsInitialized == false)
+        {
+            return;
+        }
+        if (Info.Parameters.Health <= 0)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        var position = _rigidbody.position;
         GameObject[] targets;
         if (IsPlayer)
         {
@@ -48,26 +52,58 @@ public class MoveController : MonoBehaviour
         if (targets != null && targets.Length > 0)
         {
             GameObject attackTarget = null;
-            float minDistance = 999999999;
+            Vector3 targetPos = Vector3.zero;
+            float distanceToEnemy = 999999999;
             foreach (var target in targets)
             {
-                distance = Vector3.Distance(tmpVec, target.transform.position);
-                if (distance < minDistance)
+                if (target == null)
                 {
-                    minDistance = distance;
+                    continue;
+                }
+                var targetMove = target?.GetComponent<MoveController>();
+                if (targetMove)
+                {
+                    targetPos = targetMove._rigidbody.position;
+                }
+                var castle = target?.GetComponent<CastleController>();
+                if (castle)
+                {
+                    targetPos = castle.RigidBody.position;
+                }
+                distance = Vector3.Distance(position, targetPos);
+                if (distance < distanceToEnemy)
+                {
+                    distanceToEnemy = distance;
                     attackTarget = target;
                 }
             }
-            if (minDistance > AttackRange) // 攻撃範囲に入ってない場合
+            if (attackTarget != null && distanceToEnemy > Info.Parameters.AttackRange) // 攻撃範囲に入ってない場合
             {
-                tmpVec = Vector3.MoveTowards(tmpVec, attackTarget.transform.position, moveSpeed);
-                this.gameObject.transform.position = tmpVec;
+                _rigidbody.MovePosition(position + (targetPos - position).normalized * Info.Parameters.MoveSpeed * Time.deltaTime);
             }
             else // 攻撃範囲に入ったとき
             {
                 //攻撃、アニメーション
                 state = ENEMY_STATE.ATTAKING;
-                _anim.SetBool(hashAttak, true);
+                if (_anim)
+                {
+                    _anim.SetBool(hashAttak, true);
+                }
+                attackCooldown += Time.deltaTime;
+                if (attackCooldown > Info.Parameters.AttackSpeed)
+                {
+                    attackCooldown = 0;
+                    var charParams = attackTarget.GetComponent<CharacterParameters>();
+                    if (charParams)
+                    {
+                        FightManager.Fight(Info.Parameters, charParams.Parameters);
+                    }
+                    var castleParams = attackTarget.GetComponent<CastleParameters>();
+                    if (castleParams)
+                    {
+                        FightManager.Fight(Info.Parameters, castleParams.Parameters);
+                    }
+                }
             }
         }
     }

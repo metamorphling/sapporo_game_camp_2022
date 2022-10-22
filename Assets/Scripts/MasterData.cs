@@ -29,5 +29,12 @@ public class MasterData : MonoBehaviour
     public CharacterParameters.Data Enemy_Sheep_Lvl3;
     public CharacterParameters.Data Enemy_Boss_Lvl3;
 
-
+    public CastleParameters.Data Player_Castle_Lvl1;
+    public CastleParameters.Data Player_Castle_Lvl2;
+    public CastleParameters.Data Player_Castle_Lvl3;
+    public CastleParameters.Data Player_Castle_Lvl4;
+    public CastleParameters.Data Enemy_Castle_Lvl1;
+    public CastleParameters.Data Enemy_Castle_Lvl2;
+    public CastleParameters.Data Enemy_Castle_Lvl3;
+    public CastleParameters.Data Enemy_Castle_Lvl4;
 }

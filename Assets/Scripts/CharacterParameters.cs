@@ -5,14 +5,16 @@ public class CharacterParameters : MonoBehaviour
 {
     public Data Parameters;
     public CharacterType Type;
+    public bool IsInitialized { get; set; }
 
     [Serializable]
-    public struct Data
+    public class Data
     {
         public float Health;
         public float Damage;
         public float MoveSpeed;
         public float AttackSpeed;
+        public float AttackRange;
 
         public ResourceType DropResource;
         public float DropRate;
@@ -103,5 +105,6 @@ public class CharacterParameters : MonoBehaviour
                 }
             }
         }
+        IsInitialized = true;
     }
 }
