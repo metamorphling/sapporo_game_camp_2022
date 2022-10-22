@@ -1022,6 +1022,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2038221177}
   - component: {fileID: 2038221176}
+  - component: {fileID: 2038221178}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1056,3 +1057,127 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2038221178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038221175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff0dbf3a7cfdc64a95560fb965de584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_Host:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Player_Woman:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Player_Sheep:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Player_Boss:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Enemy_Host_Lvl1:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Enemy_Woman_Lvl1:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Enemy_Sheep_Lvl1:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Enemy_Boss_Lvl1:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Enemy_Host_Lvl2:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Enemy_Woman_Lvl2:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Enemy_Sheep_Lvl2:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Enemy_Boss_Lvl2:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Enemy_Host_Lvl3:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Enemy_Woman_Lvl3:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Enemy_Sheep_Lvl3:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
+  Enemy_Boss_Lvl3:
+    Health: 0
+    Damage: 0
+    MoveSpeed: 0
+    AttackSpeed: 0
+    DropResource: 0
+    DropRate: 0
