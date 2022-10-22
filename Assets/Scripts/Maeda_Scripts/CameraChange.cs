@@ -4,34 +4,31 @@ using UnityEngine;
 
 public class CameraChange : MonoBehaviour
 {
-    private GameObject PlayerCamera;      //player‘¤‚ÌƒJƒƒ‰Ši”[—p
-    private GameObject EnemyCamera;      //player‘¤‚ÌƒJƒƒ‰Ši”[—p
-    private GameObject MidCamera;       //’†‰›‚ÌƒJƒƒ‰Ši”[—p 
+    [SerializeField]private GameObject PlayerCamera;      //playerå´ã®ã‚«ãƒ¡ãƒ©æ ¼ç´ç”¨
+    [SerializeField]private GameObject EnemyCamera;      //playerå´ã®ã‚«ãƒ¡ãƒ©æ ¼ç´ç”¨
+    [SerializeField]private GameObject MidCamera;       //ä¸­å¤®ã®ã‚«ãƒ¡ãƒ©æ ¼ç´ç”¨ 
 
     private int Change = 0;
 
     Vector3 MouseWheel;
 
-    //ŒÄ‚Ño‚µ‚ÉÀs‚³‚ê‚éŠÖ”
+    //å‘¼ã³å‡ºã—æ™‚ã«å®Ÿè¡Œã•ã‚Œã‚‹é–¢æ•°
     void Start()
     {
-        //ƒƒCƒ“ƒJƒƒ‰‚ÆƒTƒuƒJƒƒ‰‚ğ‚»‚ê‚¼‚êæ“¾
-       PlayerCamera = GameObject.Find("PlayerCastle Camera");
-        EnemyCamera = GameObject.Find("EnemyCastle Camera");
-        MidCamera = GameObject.Find("Mid Camera");
-
-        //ƒTƒuƒJƒƒ‰‚ğ”ñƒAƒNƒeƒBƒu‚É‚·‚é
+        //ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©ã¨ã‚µãƒ–ã‚«ãƒ¡ãƒ©ã‚’ãã‚Œãã‚Œå–å¾—
+        
+        //ã‚µãƒ–ã‚«ãƒ¡ãƒ©ã‚’éã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ã™ã‚‹
         EnemyCamera.SetActive(false);
         MidCamera.SetActive(false);
     }
     
 
-    //’PˆÊŠÔ‚²‚Æ‚ÉÀs‚³‚ê‚éŠÖ”
+    //å˜ä½æ™‚é–“ã”ã¨ã«å®Ÿè¡Œã•ã‚Œã‚‹é–¢æ•°
     void Update()
     {
         MouseWheel.y += Input.mouseScrollDelta.y;
         
-        //ƒXƒy[ƒXƒL[‚ª‰Ÿ‚³‚ê‚Ä‚¢‚éŠÔAƒTƒuƒJƒƒ‰‚ğƒAƒNƒeƒBƒu‚É‚·‚é
+        //ã‚¹ãƒšãƒ¼ã‚¹ã‚­ãƒ¼ãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹é–“ã€ã‚µãƒ–ã‚«ãƒ¡ãƒ©ã‚’ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ã™ã‚‹
         if (MouseWheel.y == 1)
         {
             Change++;
