@@ -14,7 +14,11 @@ GameObject:
   - component: {fileID: 62249862889686193}
   - component: {fileID: 62249862889686205}
   - component: {fileID: 2559315558860753793}
+<<<<<<< Updated upstream
   - component: {fileID: 459335378952462462}
+=======
+  - component: {fileID: 4163132957082507852}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -29,14 +33,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62249862889686194}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 45.4, y: 8.3, z: -422.4}
   m_LocalScale: {x: 1000, y: 1000, z: 1000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &62249862889686207
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -99,7 +103,7 @@ CapsuleCollider:
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
-  m_Direction: 1
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &62249862889686205
 Rigidbody:
@@ -129,19 +133,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0641d76ef0a26448b79fbf40ffed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 0.5
   _rigidbody: {fileID: 62249862889686205}
   capsuleCollider: {fileID: 62249862889686193}
   AttackRange: 15
   IsPlayer: 1
+<<<<<<< Updated upstream
 --- !u!114 &459335378952462462
 MonoBehaviour:
+=======
+--- !u!95 &4163132957082507852
+Animator:
+  serializedVersion: 4
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62249862889686194}
   m_Enabled: 1
+<<<<<<< Updated upstream
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b440911320dfeb44095d5b2181260e2d, type: 3}
   m_Name: 
@@ -151,3 +162,16 @@ MonoBehaviour:
     Damage: 0
     MoveSpeed: 0
     AttackSpeed: 0
+=======
+  m_Avatar: {fileID: 9000000, guid: 99bd3eec0f4426247a175cd7b6a8fe32, type: 3}
+  m_Controller: {fileID: 9100000, guid: 05e74814d7f0fce468b32a85f0e059f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+>>>>>>> Stashed changes

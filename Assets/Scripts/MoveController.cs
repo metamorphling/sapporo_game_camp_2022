@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
+    enum ENEMY_STATE
+    {
+        SEARCH,
+        ATTAKING,
+        DEAD
+    }
     public float moveSpeed;
     public Rigidbody _rigidbody;
     public CapsuleCollider capsuleCollider;
@@ -10,12 +16,18 @@ public class MoveController : MonoBehaviour
 
     Vector3 tmpVec;
     float distance;
+    Animator _anim;//s
+    ENEMY_STATE state;//s
+    int hashAttak = Animator.StringToHash("IsAttack");//s
 
     private void Start()
     {
         moveSpeed = 0.5f;
         _rigidbody = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
+        _anim = this.GetComponent<Animator>();
+
+        state = ENEMY_STATE.SEARCH; // プレイヤーを探索するステートに設定
 #if DEBUG
         AttackRange = 15;
 #endif
@@ -46,10 +58,16 @@ public class MoveController : MonoBehaviour
                     attackTarget = target;
                 }
             }
-            if (minDistance > AttackRange)
+            if (minDistance > AttackRange) // 攻撃範囲に入ってない場合
             {
                 tmpVec = Vector3.MoveTowards(tmpVec, attackTarget.transform.position, moveSpeed);
                 this.gameObject.transform.position = tmpVec;
+            }
+            else // 攻撃範囲に入ったとき
+            {
+                //攻撃、アニメーション
+                state = ENEMY_STATE.ATTAKING;
+                _anim.SetBool(hashAttak, true);
             }
         }
     }
