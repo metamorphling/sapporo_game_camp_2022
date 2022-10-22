@@ -3,6 +3,8 @@ using UnityEngine;
 public class Game
 {
     public GameState GameState = GameState.NotPlaying;
+    public static GameObject[] Enemies { get; set; }
+    public static GameObject[] Players { get; set; }
 
     private static readonly Game _instance = new Game();
 
