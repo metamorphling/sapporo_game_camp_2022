@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DrawSpawn : MonoBehaviour
 {
-    private Camera mainCamera;
+    [SerializeField]Camera mainCamera;
     [Header("スポーンキャラクターの登録")] [SerializeField]List<GameObject> charas;
     [Header("キャラクター選択限界数")] [SerializeField]int selectLimit;
     [SerializeField]List<GameObject> selectedCharas;
@@ -16,7 +16,7 @@ public class DrawSpawn : MonoBehaviour
  
     void Start()
     {
-        mainCamera = Camera.main;
+        //mainCamera = Camera.main;
     }
  
     void Update()
