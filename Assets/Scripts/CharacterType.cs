@@ -4,7 +4,8 @@ using UnityEngine;
 
 public enum CharacterType
 {
-    Character1,
-    Character2,
-    Character3,
+    Host,
+    Woman,
+    Sheep,
+    Boss,
 }

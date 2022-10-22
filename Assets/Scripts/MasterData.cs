@@ -21,4 +21,6 @@ public class MasterData : MonoBehaviour
     public CharacterParameters.Data Enemy_Woman_Lvl3;
     public CharacterParameters.Data Enemy_Sheep_Lvl3;
     public CharacterParameters.Data Enemy_Boss_Lvl;
+
+
 }
