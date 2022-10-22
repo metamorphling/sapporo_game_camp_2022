@@ -23,7 +23,7 @@ public class EnemyMove : MonoBehaviour
         if (target.Length > 0)
         {
             distans = Vector3.Distance(tmpVec, target[0].transform.position);
-            if (distans > 15)
+            if (distans > 25)
             {
                 tmpVec = Vector3.MoveTowards(tmpVec, target[0].transform.position, moveSpeed);
                 this.gameObject.transform.position = tmpVec;
