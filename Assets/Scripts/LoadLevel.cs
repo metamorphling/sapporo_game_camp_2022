@@ -8,5 +8,6 @@ public class LoadLevel : MonoBehaviour
     public void OnClickLoadScene()
     {
         SceneManager.LoadScene("Level1");
+        Game.StartGame();
     }
 }
