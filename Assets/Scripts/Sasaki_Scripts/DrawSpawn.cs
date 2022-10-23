@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class DrawSpawn : MonoBehaviour
@@ -10,10 +11,13 @@ public class DrawSpawn : MonoBehaviour
     [Header("キャラクター選択限界数")] [SerializeField]int selectLimit;
     [SerializeField]List<GameObject> selectedCharas;
     [Header("スポーン間隔（マウスカーソルの距離）")] [SerializeField]float spawnInterval;
+    public UnityEngine.UI.Image Icon1;
+    public UnityEngine.UI.Image Icon2;
+    public UnityEngine.UI.Image Icon3;
     Vector3 spawnedPosition;
     int spawnindex = 0;
     bool isSpawned;
- 
+
     void Start()
     {
         //mainCamera = Camera.main;
@@ -54,16 +58,19 @@ public class DrawSpawn : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
+            Icon1.color = Color.red;
             selectedCharas.Add(charas[0]);
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
+            Icon2.color = Color.green;
             selectedCharas.Add(charas[1]);
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha3))
         {
+            Icon3.color = Color.blue;
             selectedCharas.Add(charas[2]);
         }
     }
@@ -112,7 +119,7 @@ public class DrawSpawn : MonoBehaviour
         }
         else
         {
-            if (Game.Players.Length > 2)
+            if (Game.Players != null && Game.Players.Length > 2)
             {
                 return;
             }
