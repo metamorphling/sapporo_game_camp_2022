@@ -11,11 +11,11 @@ public class Result : MonoBehaviour
        
     }
 
-    private void retryScene()
+    public void retryScene()
     {
         SceneManager.LoadScene("Level1");
     }
-    private void TitleScene()
+    public void TitleScene()
     {
         SceneManager.LoadScene("TitleMenu");
     }
