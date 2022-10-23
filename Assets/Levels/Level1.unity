@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.14205465, g: 0.15624529, b: 0.15419886, a: 1}
+  m_IndirectSpecularColor: {r: 0.14205432, g: 0.15624489, b: 0.15419841, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -305,6 +305,7 @@ MonoBehaviour:
   Info: {fileID: 199166358}
   RigidBody: {fileID: 199166359}
   HealthBar: {fileID: 1010934025}
+  GradeUpButton: {fileID: 0}
 --- !u!1 &264905566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4198819262089346124, guid: 7fb793affb40e9a49a00f99c474390e6, type: 3}
@@ -1787,6 +1788,7 @@ MonoBehaviour:
   Info: {fileID: 1253462093}
   RigidBody: {fileID: 1253462094}
   HealthBar: {fileID: 1532219632}
+  GradeUpButton: {fileID: 1632502745}
 --- !u!1 &1532219630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,9 +1985,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 713713181}
-        m_TargetAssemblyTypeName: GradeUp, Assembly-CSharp
-        m_MethodName: gradeUp
+      - m_Target: {fileID: 1253462100}
+        m_TargetAssemblyTypeName: CastleController, Assembly-CSharp
+        m_MethodName: GradeUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2349,6 +2351,8 @@ MonoBehaviour:
   ResourceStoneText: {fileID: 1912050486}
   PlayerCastle: {fileID: 1253462092}
   EnemyCastle: {fileID: 199166357}
+  ResourceTree: 0
+  ResourceStone: 0
 --- !u!4 &2038221177
 Transform:
   m_ObjectHideFlags: 0
