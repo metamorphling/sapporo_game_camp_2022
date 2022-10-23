@@ -53,8 +53,8 @@ public class GameManager : MonoBehaviour
 
     private void UpdateView()
     {
-        ResourceTreeText.text = $"木：{ResourceTree}";
-        ResourceStoneText.text = $"石：{ResourceStone}";
+        ResourceTreeText.text = $"x{ResourceTree}";
+        ResourceStoneText.text = $"x{ResourceStone}";
     }
 
     private void Update()
