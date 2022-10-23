@@ -5,6 +5,7 @@ public class CastleParameters : MonoBehaviour
 {
     public Data Parameters;
     public bool IsPlayer;
+    public float CurrentHealth { get; set; }
     public bool IsInitialized { get; set; }
 
     [Serializable]
@@ -55,6 +56,8 @@ public class CastleParameters : MonoBehaviour
                 Parameters = MasterData.Instance.Enemy_Castle_Lvl4;
             }
         }
+
+        CurrentHealth = Parameters.Health;
         IsInitialized = true;
     }
 }

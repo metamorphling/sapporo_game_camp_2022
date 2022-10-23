@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.14205465, g: 0.15624529, b: 0.15419886, a: 1}
+  m_IndirectSpecularColor: {r: 0.14205432, g: 0.15624489, b: 0.15419841, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -203,6 +203,7 @@ MonoBehaviour:
   - {fileID: 787019610}
   spawnInterval: 10
   parentObj: {fileID: 148368586}
+  IsSpawning: 1
 --- !u!1001 &199166356
 PrefabInstance:
   m_ObjectHideFlags: 0

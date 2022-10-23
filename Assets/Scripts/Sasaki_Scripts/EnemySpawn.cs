@@ -8,6 +8,7 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField]List<GameObject> spawnPoints;
     [SerializeField]float spawnInterval;
     [SerializeField]GameObject parentObj;
+    [SerializeField]bool IsSpawning;
     float countTime;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,10 @@ public class EnemySpawn : MonoBehaviour
 
     void Spawn()
     {
+        if (IsSpawning == false)
+        {
+            return;
+        }
         foreach(var a in spawnPoints)
         {
             var obj = Instantiate(enemy, a.transform.position, enemy.transform.rotation);

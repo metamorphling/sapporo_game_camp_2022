@@ -33,7 +33,7 @@ public class MoveController : MonoBehaviour
         {
             return;
         }
-        if (Info.Parameters.Health <= 0)
+        if (Info.CurrentHealth <= 0)
         {
             Destroy(this.gameObject);
             return;
@@ -96,13 +96,14 @@ public class MoveController : MonoBehaviour
                     var charParams = attackTarget.GetComponent<CharacterParameters>();
                     if (charParams)
                     {
-                        FightManager.Fight(Info.Parameters, charParams.Parameters);
+                        charParams.CurrentHealth -= Info.Parameters.Damage;
                     }
                     var castleParams = attackTarget.GetComponent<CastleParameters>();
                     if (castleParams)
                     {
-                        FightManager.Fight(Info.Parameters, castleParams.Parameters);
+                        castleParams.CurrentHealth -= Info.Parameters.Damage;
                     }
+                    Debug.Log("Attack! ");
                 }
             }
         }

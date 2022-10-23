@@ -6,6 +6,7 @@ public class CharacterParameters : MonoBehaviour
     public Data Parameters;
     public CharacterType Type;
     public bool IsInitialized { get; set; }
+    public float CurrentHealth { get; set; }
 
     [Serializable]
     public class Data
@@ -105,6 +106,8 @@ public class CharacterParameters : MonoBehaviour
                 }
             }
         }
+
+        CurrentHealth = Parameters.Health;
         IsInitialized = true;
     }
 }

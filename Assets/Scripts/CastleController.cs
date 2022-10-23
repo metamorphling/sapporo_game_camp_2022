@@ -14,7 +14,7 @@ public class CastleController : MonoBehaviour
     private void Start()
     {
         Info.Init(1);
-        _healthMax = Info.Parameters.Health;
+        _healthMax = Info.CurrentHealth;
     }
 
     void Update()
@@ -23,8 +23,8 @@ public class CastleController : MonoBehaviour
         {
             return;
         }
-        HealthBar.fillAmount = Mathf.Clamp(Info.Parameters.Health / _healthMax, 0, 1f);
-        if (Info.Parameters.Health <= 0)
+        HealthBar.fillAmount = Mathf.Clamp(Info.CurrentHealth / _healthMax, 0, 1f);
+        if (Info.CurrentHealth <= 0)
         {
             Destroy(this.gameObject);
             return;
