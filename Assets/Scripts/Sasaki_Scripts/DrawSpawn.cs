@@ -112,6 +112,10 @@ public class DrawSpawn : MonoBehaviour
         }
         else
         {
+            if (Game.Players.Length > 2)
+            {
+                return;
+            }
             var obj = Instantiate(selectedCharas[0], spawnPosition, Quaternion.identity);
             var param = obj.GetComponent<CharacterParameters>();
             if (param)

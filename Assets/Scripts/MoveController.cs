@@ -93,6 +93,10 @@ public class MoveController : MonoBehaviour
                 if (attackCooldown > Info.Parameters.AttackSpeed)
                 {
                     attackCooldown = 0;
+                    if (attackTarget == null)
+                    {
+                        return;
+                    }
                     var charParams = attackTarget.GetComponent<CharacterParameters>();
                     if (charParams)
                     {
@@ -103,7 +107,6 @@ public class MoveController : MonoBehaviour
                     {
                         castleParams.CurrentHealth -= Info.Parameters.Damage;
                     }
-                    Debug.Log("Attack! ");
                 }
             }
         }
