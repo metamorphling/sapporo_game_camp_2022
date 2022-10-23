@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.14205432, g: 0.15624489, b: 0.15419841, a: 1}
+  m_IndirectSpecularColor: {r: 0.14205465, g: 0.15624529, b: 0.15419886, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &75270480 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4198819262354354274, guid: 7fb793affb40e9a49a00f99c474390e6, type: 3}
-  m_PrefabInstance: {fileID: 295260689}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &148368586
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,11 +451,11 @@ PrefabInstance:
     - target: {fileID: 4198819261878080399, guid: 7fb793affb40e9a49a00f99c474390e6, type: 3}
       propertyPath: MidCamera
       value: 
-      objectReference: {fileID: 75270480}
+      objectReference: {fileID: 0}
     - target: {fileID: 4198819261878080399, guid: 7fb793affb40e9a49a00f99c474390e6, type: 3}
       propertyPath: EnemyCamera
       value: 
-      objectReference: {fileID: 1951333971}
+      objectReference: {fileID: 0}
     - target: {fileID: 4198819261878080399, guid: 7fb793affb40e9a49a00f99c474390e6, type: 3}
       propertyPath: PlayerCamera
       value: 
@@ -2021,11 +2016,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1951333971 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4198819260914919723, guid: 7fb793affb40e9a49a00f99c474390e6, type: 3}
-  m_PrefabInstance: {fileID: 295260689}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2038221175
 GameObject:
   m_ObjectHideFlags: 0
