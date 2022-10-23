@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    [SerializeField]GameObject enemy;
+    [SerializeField]List<GameObject> enemys;
     [SerializeField]List<GameObject> spawnPoints;
     [SerializeField]float spawnInterval;
     [SerializeField]GameObject parentObj;
@@ -38,8 +38,9 @@ public class EnemySpawn : MonoBehaviour
         }
         foreach(var a in spawnPoints)
         {
+            int randNum = Random.Range(0, 3);
             audioSource.PlayOneShot(spawn);
-            var obj = Instantiate(enemy, a.transform.position, enemy.transform.rotation);
+            var obj = Instantiate(enemys[randNum], a.transform.position, enemys[randNum].transform.rotation);
             var param = obj.GetComponent<CharacterParameters>();
             if (param)
             {

@@ -182,8 +182,8 @@ GameObject:
   - component: {fileID: 3117117614665231514}
   - component: {fileID: 3788363785431179366}
   m_Layer: 0
-  m_Name: Sheep
-  m_TagString: Untagged
+  m_Name: Enemy_Sheep
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,7 +195,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6090345059398223478}
-  m_LocalRotation: {x: -0, y: 0.9146241, z: -0, w: 0.40430528}
+  m_LocalRotation: {x: 0, y: -0.9135455, z: 0, w: 0.40673664}
   m_LocalPosition: {x: -75.29013, y: 0.6700001, z: 51.666016}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 0
@@ -206,7 +206,7 @@ Transform:
   - {fileID: 204082325426812441}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 132.305, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -132, z: 0}
 --- !u!54 &6360253935670901538
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 6360253935670901538}
   capsuleCollider: {fileID: 6360253935670901539}
-  IsPlayer: 1
+  IsPlayer: 0
   Info: {fileID: 6360253935670901541}
   Attack: {fileID: 8300000, guid: 44a8d3c1d7791ec4b9756c4b5728e4a6, type: 3}
 --- !u!114 &6360253935670901541
@@ -272,8 +272,8 @@ MonoBehaviour:
     MoveSpeed: 0
     AttackSpeed: 0
     AttackRange: 0
-    DropResource: 0
-    DropAmmount: 0
+    DropResource: 1
+    DropAmmount: 1
   Type: 2
 --- !u!95 &3117117614665231514
 Animator:

@@ -79,8 +79,8 @@ GameObject:
   - component: {fileID: 2451142432437122989}
   - component: {fileID: 8324274769761110102}
   m_Layer: 0
-  m_Name: Girl
-  m_TagString: Untagged
+  m_Name: Enemy_Girl
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368116849250117827}
-  m_LocalRotation: {x: -0, y: 0.87620753, z: -0, w: 0.48193395}
+  m_LocalRotation: {x: 0, y: -0.8746197, z: 0, w: 0.4848096}
   m_LocalPosition: {x: -0.23005295, y: 0, z: -0.79245263}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_ConstrainProportionsScale: 0
@@ -106,7 +106,7 @@ Transform:
   - {fileID: 7628491087720377906}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 122.376, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -122, z: 0}
 --- !u!136 &1206199071190030187
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 8623726127439815411}
   capsuleCollider: {fileID: 1206199071190030187}
-  IsPlayer: 1
+  IsPlayer: 0
   Info: {fileID: 873480246715075426}
   Attack: {fileID: 8300000, guid: 44a8d3c1d7791ec4b9756c4b5728e4a6, type: 3}
 --- !u!114 &873480246715075426
@@ -173,7 +173,7 @@ MonoBehaviour:
     AttackSpeed: 0
     AttackRange: 0
     DropResource: 0
-    DropAmmount: 0
+    DropAmmount: 1
   Type: 1
 --- !u!95 &2451142432437122989
 Animator:

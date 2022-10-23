@@ -183,7 +183,7 @@ public class DrawSpawn : MonoBehaviour
             {
                 return;
             }
-            var obj = Instantiate(selectedCharas[0], spawnPosition, Quaternion.identity);
+            var obj = Instantiate(selectedCharas[0], spawnPosition, selectedCharas[0].transform.rotation);
             audioSource.PlayOneShot(Spawn);
             var param = obj.GetComponent<CharacterParameters>();
             if (param)
