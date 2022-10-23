@@ -18,8 +18,16 @@ public class DrawSpawn : MonoBehaviour
     public UnityEngine.UI.Image[] Icons;
     [SerializeField] Color[] intiColor;
     [SerializeField] Color[] selectedColor;
+    private List<bool> ActiveList = new List<bool> {false, false, false};
     int spawnindex = 0;
     bool isSpawned;
+
+    private void Awake()
+    {
+        Icons[0].color = intiColor[0];
+        Icons[1].color = intiColor[1];
+        Icons[2].color = intiColor[2];
+    }
 
     void Start()
     {
@@ -50,6 +58,15 @@ public class DrawSpawn : MonoBehaviour
         // }
 
         SelectCharacters();
+        {   //カラー変更
+            Color activecolor = Color.white;
+            Color inactivecolor = Color.white;
+            inactivecolor.a = 0.3f;
+            for (int i = 0; i < ActiveList.Count; i++)
+            {
+                Icons[i].color = ActiveList[i] ? Icons[i].color = activecolor : Icons[i].color = inactivecolor;
+            }
+        }
         Deselect();
 
         if(Input.GetMouseButton(0))
@@ -67,20 +84,23 @@ public class DrawSpawn : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Icons[0].color = selectedColor[0];
+            //Icons[0].color = selectedColor[0];
             selectedCharas.Add(charas[0]);
+            ActiveList[0] = !ActiveList[0];
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Icons[1].color = selectedColor[1];
+            //Icons[1].color = selectedColor[1];
             selectedCharas.Add(charas[1]);
+            ActiveList[1] = !ActiveList[1];
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            Icons[2].color = selectedColor[2];
+            //Icons[2].color = selectedColor[2];
             selectedCharas.Add(charas[2]);
+            ActiveList[2] = !ActiveList[2];
         }
     }
 
@@ -93,20 +113,20 @@ public class DrawSpawn : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Alpha1) && selectedCharas.Count() == 1)
         {
-            Icons[0].color = intiColor[0];
+            //Icons[0].color = Icons[0].color == intiColor[0] ? color : intiColor[0];
             selectedCharas.Add(charas[0]);
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha2) && selectedCharas.Count() == 2)
+        if(Input.GetKeyDown(KeyCode.Alpha2) /*&& selectedCharas.Count() == 2*/)
         {
-            Icons[1].color = intiColor[1];
+            //Icons[1].color = Icons[1].color == intiColor[1] ? color : intiColor[1];
             selectedCharas.Add(charas[1]);
             Debug.Log("選択解除 index1");
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha3) && selectedCharas.Count() == 3)
+        if(Input.GetKeyDown(KeyCode.Alpha3) /*&& selectedCharas.Count() == 3*/)
         {
-            Icons[2].color = intiColor[2];
+            //Icons[2].color = Icons[2].color == intiColor[2] ? color : intiColor[2];
             selectedCharas.Add(charas[2]);
             Debug.Log("選択解除 index2");
         }
