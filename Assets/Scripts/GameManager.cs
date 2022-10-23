@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public void AddTree(int amount)
     {
         ResourceTree += amount;
+        ResourceTree = Mathf.Clamp(ResourceTree, 0, 100);
         UpdateView();
         var controller = PlayerCastle.GetComponent<CastleController>();
         controller.UpdateUpgradeView();
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     public void RemoveTree(int amount)
     {
         ResourceTree -= amount;
+        ResourceTree = Mathf.Clamp(ResourceTree, 0, 100);
         UpdateView();
         var controller = PlayerCastle.GetComponent<CastleController>();
         controller.UpdateUpgradeView();
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
     public void AddStone(int amount)
     {
         ResourceStone += amount;
+        ResourceStone = Mathf.Clamp(ResourceStone, 0, 100);
         UpdateView();
         var controller = PlayerCastle.GetComponent<CastleController>();
         controller.UpdateUpgradeView();
@@ -39,6 +42,7 @@ public class GameManager : MonoBehaviour
     public void RemoveStone(int amount)
     {
         ResourceStone -= amount;
+        ResourceStone = Mathf.Clamp(ResourceStone, 0, 100);
         UpdateView();
         var controller = PlayerCastle.GetComponent<CastleController>();
         controller.UpdateUpgradeView();
