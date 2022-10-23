@@ -35,6 +35,29 @@ public class MoveController : MonoBehaviour
         }
         if (Info.CurrentHealth <= 0)
         {
+            if (gameObject.tag == "Enemy")
+            {
+                var info = gameObject.GetComponent<CharacterParameters>();
+                if (info.Parameters.DropResource == ResourceType.Stone)
+                {
+                    GameManager.Instance.AddStone(info.Parameters.DropAmmount);
+                }
+                else if (info.Parameters.DropResource == ResourceType.Tree)
+                {
+                    GameManager.Instance.AddTree(info.Parameters.DropAmmount);
+                }
+                else if (info.Parameters.DropResource == ResourceType.Random)
+                {
+                    if (Random.Range(0, 2) == 1)
+                    {
+                        GameManager.Instance.AddTree(info.Parameters.DropAmmount);
+                    }
+                    else
+                    {
+                        GameManager.Instance.AddStone(info.Parameters.DropAmmount);
+                    }
+                }
+            }
             Destroy(this.gameObject);
             return;
         }

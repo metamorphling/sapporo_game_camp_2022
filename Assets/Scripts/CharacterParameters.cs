@@ -18,7 +18,7 @@ public class CharacterParameters : MonoBehaviour
         public float AttackRange;
 
         public ResourceType DropResource;
-        public float DropRate;
+        public int DropAmmount;
     }
 
     public void Init(bool isPlayer, int level)
