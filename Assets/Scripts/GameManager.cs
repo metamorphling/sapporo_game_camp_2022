@@ -12,28 +12,36 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     private float _timer;
 
-    private int ResourceTree;
-    private int ResourceStone;
+    public int ResourceTree;
+    public int ResourceStone;
 
     public void AddTree(int amount)
     {
         ResourceTree += amount;
         UpdateView();
+        var controller = PlayerCastle.GetComponent<CastleController>();
+        controller.UpdateUpgradeView();
     }
     public void RemoveTree(int amount)
     {
         ResourceTree -= amount;
         UpdateView();
+        var controller = PlayerCastle.GetComponent<CastleController>();
+        controller.UpdateUpgradeView();
     }
     public void AddStone(int amount)
     {
         ResourceStone += amount;
         UpdateView();
+        var controller = PlayerCastle.GetComponent<CastleController>();
+        controller.UpdateUpgradeView();
     }
     public void RemoveStone(int amount)
     {
         ResourceStone -= amount;
         UpdateView();
+        var controller = PlayerCastle.GetComponent<CastleController>();
+        controller.UpdateUpgradeView();
     }
 
     private void Awake()
