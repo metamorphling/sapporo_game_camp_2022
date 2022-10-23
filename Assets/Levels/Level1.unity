@@ -1508,7 +1508,7 @@ MonoBehaviour:
     DropRate: 0
   Enemy_Woman_Lvl2:
     Health: 800
-    Damage: 350
+    Damage: 600
     MoveSpeed: 30
     AttackSpeed: 0.5
     AttackRange: 40
@@ -1516,7 +1516,7 @@ MonoBehaviour:
     DropRate: 0
   Enemy_Sheep_Lvl2:
     Health: 1700
-    Damage: 200
+    Damage: 1200
     MoveSpeed: 30
     AttackSpeed: 0.5
     AttackRange: 40
@@ -1524,7 +1524,7 @@ MonoBehaviour:
     DropRate: 0
   Enemy_Boss_Lvl2:
     Health: 2300
-    Damage: 700
+    Damage: 2200
     MoveSpeed: 30
     AttackSpeed: 0.5
     AttackRange: 100
