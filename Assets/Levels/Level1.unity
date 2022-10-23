@@ -453,6 +453,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4198819261878080399, guid: 7fb793affb40e9a49a00f99c474390e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198819261878080399, guid: 7fb793affb40e9a49a00f99c474390e6, type: 3}
       propertyPath: EnemyCamera
       value: 
       objectReference: {fileID: 0}
