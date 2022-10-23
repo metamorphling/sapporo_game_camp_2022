@@ -209,6 +209,7 @@ MonoBehaviour:
   Info: {fileID: 50785612}
   RigidBody: {fileID: 50785610}
   HealthBar: {fileID: 1359833566}
+  GradeUpButton: {fileID: 0}
 --- !u!114 &50785612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1443,6 +1444,8 @@ MonoBehaviour:
   ResourceStoneText: {fileID: 1157157195}
   PlayerCastle: {fileID: 929172410}
   EnemyCastle: {fileID: 50785609}
+  ResourceTree: 0
+  ResourceStone: 0
 --- !u!4 &658832165
 Transform:
   m_ObjectHideFlags: 0
@@ -1545,6 +1548,7 @@ MonoBehaviour:
   Info: {fileID: 929172413}
   RigidBody: {fileID: 929172411}
   HealthBar: {fileID: 1418030094}
+  GradeUpButton: {fileID: 0}
 --- !u!114 &929172413
 MonoBehaviour:
   m_ObjectHideFlags: 0
