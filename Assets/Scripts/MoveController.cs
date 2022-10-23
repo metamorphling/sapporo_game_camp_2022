@@ -102,6 +102,7 @@ public class MoveController : MonoBehaviour
             }
             if (attackTarget != null && distanceToEnemy > Info.Parameters.AttackRange) // 攻撃範囲に入ってない場合
             {
+                _anim.SetBool(hashAttak, false);
                 _rigidbody.MovePosition(position + (targetPos - position).normalized * Info.Parameters.MoveSpeed * Time.deltaTime);
             }
             else // 攻撃範囲に入ったとき

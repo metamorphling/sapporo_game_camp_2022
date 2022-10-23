@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 62249862889686205}
   - component: {fileID: 2559315558860753793}
   - component: {fileID: 459335378952462462}
+  - component: {fileID: -6108652879355267363}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -152,5 +153,25 @@ MonoBehaviour:
     AttackSpeed: 0
     AttackRange: 0
     DropResource: 0
-    DropRate: 0
+    DropAmmount: 0
   Type: 2
+--- !u!95 &-6108652879355267363
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62249862889686194}
+  m_Enabled: 0
+  m_Avatar: {fileID: 9000000, guid: cca6c85d736c74848bdd860bbfec6c7d, type: 3}
+  m_Controller: {fileID: 9100000, guid: 05e74814d7f0fce468b32a85f0e059f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
