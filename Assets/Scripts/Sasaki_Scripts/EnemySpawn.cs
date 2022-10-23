@@ -10,9 +10,12 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField]GameObject parentObj;
     [SerializeField]bool IsSpawning;
     float countTime;
+    public AudioClip spawn;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         countTime = spawnInterval;
     }
 
@@ -35,6 +38,7 @@ public class EnemySpawn : MonoBehaviour
         }
         foreach(var a in spawnPoints)
         {
+            audioSource.PlayOneShot(spawn);
             var obj = Instantiate(enemy, a.transform.position, enemy.transform.rotation);
             var param = obj.GetComponent<CharacterParameters>();
             if (param)

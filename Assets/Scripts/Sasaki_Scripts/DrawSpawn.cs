@@ -20,6 +20,8 @@ public class DrawSpawn : MonoBehaviour
     private List<bool> ActiveList = new List<bool> {false, false, false};
     int spawnindex = 0;
     bool isSpawned;
+    public AudioClip Spawn;
+    AudioSource audioSource;
 
     private void Awake()
     {
@@ -30,6 +32,7 @@ public class DrawSpawn : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         //mainCamera = Camera.main;
         // 未選択時のカラーを格納
         for(int i=0; i<Icons.Length; i++)
@@ -168,7 +171,8 @@ public class DrawSpawn : MonoBehaviour
         {
             var mouseMovePos = GetMouseRaycastHitPosition();
             var mouseInterval = Mathf.Abs(mouseMovePos.sqrMagnitude - spawnedPosition.sqrMagnitude);
-            if(mouseInterval > spawnInterval)
+            
+            if (mouseInterval > spawnInterval)
             {
                 isSpawned = false;
             }
@@ -180,6 +184,7 @@ public class DrawSpawn : MonoBehaviour
                 return;
             }
             var obj = Instantiate(selectedCharas[0], spawnPosition, Quaternion.identity);
+            audioSource.PlayOneShot(Spawn);
             var param = obj.GetComponent<CharacterParameters>();
             if (param)
             {

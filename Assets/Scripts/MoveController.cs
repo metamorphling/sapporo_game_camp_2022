@@ -19,8 +19,11 @@ public class MoveController : MonoBehaviour
     int hashAttak = Animator.StringToHash("IsAttack");//s
     float attackCooldown;
 
+    public AudioClip Attack;
+    AudioSource audioSource;
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         _rigidbody = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         _anim = this.GetComponent<Animator>();
@@ -115,7 +118,8 @@ public class MoveController : MonoBehaviour
                 }
                 attackCooldown += Time.deltaTime;
                 if (attackCooldown > Info.Parameters.AttackSpeed)
-                {
+                { 
+                    audioSource.PlayOneShot(Attack);
                     attackCooldown = 0;
                     if (attackTarget == null)
                     {
