@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Level1.unity
     guid: 29ff1d7f021822c43902be5d7b07d4ca
+  - enabled: 1
+    path: Assets/Levels/GameClear.unity
+    guid: 0fcfae19655ed66449516711199874bb
+  - enabled: 1
+    path: Assets/Levels/GameOver.unity
+    guid: 346afc408852e0a4684449bd2e8cdc28
   m_configObjects: {}

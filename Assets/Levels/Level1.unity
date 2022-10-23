@@ -2058,6 +2058,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ResourceTreeText: {fileID: 742926255}
   ResourceStoneText: {fileID: 1912050486}
+  PlayerCastle: {fileID: 1253462092}
+  EnemyCastle: {fileID: 199166357}
 --- !u!4 &2038221177
 Transform:
   m_ObjectHideFlags: 0

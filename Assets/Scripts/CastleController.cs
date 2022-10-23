@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class CastleController : MonoBehaviour
 {
     public CastleParameters Info;
     public Rigidbody RigidBody;
     public Image HealthBar;
+
+   
 
     private float _healthMax;
 
@@ -27,6 +30,7 @@ public class CastleController : MonoBehaviour
         if (Info.CurrentHealth <= 0)
         {
             Destroy(this.gameObject);
+            
             return;
         }
     }

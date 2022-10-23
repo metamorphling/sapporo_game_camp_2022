@@ -1,10 +1,13 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI ResourceTreeText;
     public TextMeshProUGUI ResourceStoneText;
+    [SerializeField] GameObject PlayerCastle;
+    [SerializeField] GameObject EnemyCastle;
 
     public static GameManager Instance;
     private float _timer;
@@ -54,6 +57,15 @@ public class GameManager : MonoBehaviour
             _timer = 0;
             Game.Players = (GameObject.FindGameObjectsWithTag("Player"));
             Game.Enemies = (GameObject.FindGameObjectsWithTag("Enemy"));
+        }
+
+        if (PlayerCastle == null)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+        if (EnemyCastle == null)
+        {
+            SceneManager.LoadScene("GameClear");
         }
     }
 }
