@@ -7,20 +7,28 @@ using UnityEngine;
 public class DrawSpawn : MonoBehaviour
 {
     [SerializeField]Camera mainCamera;
-    [Header("スポーンキャラクターの登録")] [SerializeField]List<GameObject> charas;
+    [Header("スポーンキャラクターの登録")] [SerializeField]List<GameObject> charas = new List<GameObject>(3);
     [Header("キャラクター選択限界数")] [SerializeField]int selectLimit;
     [SerializeField]List<GameObject> selectedCharas;
     [Header("スポーン間隔（マウスカーソルの距離）")] [SerializeField]float spawnInterval;
-    public UnityEngine.UI.Image Icon1;
-    public UnityEngine.UI.Image Icon2;
-    public UnityEngine.UI.Image Icon3;
+    // public UnityEngine.UI.Image Icon1;
+    // public UnityEngine.UI.Image Icon2;
+    // public UnityEngine.UI.Image Icon3;
     Vector3 spawnedPosition;
+    public UnityEngine.UI.Image[] Icons;
+    [SerializeField] Color[] intiColor;
+    [SerializeField] Color[] selectedColor;
     int spawnindex = 0;
     bool isSpawned;
 
     void Start()
     {
         //mainCamera = Camera.main;
+        // 未選択時のカラーを格納
+        for(int i=0; i<Icons.Length; i++)
+        {
+            intiColor[i] = Icons[i].color;
+        }
     }
  
     void Update()
@@ -42,6 +50,7 @@ public class DrawSpawn : MonoBehaviour
         // }
 
         SelectCharacters();
+        Deselect();
 
         if(Input.GetMouseButton(0))
         {
@@ -58,20 +67,48 @@ public class DrawSpawn : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Icon1.color = Color.red;
+            Icons[0].color = selectedColor[0];
             selectedCharas.Add(charas[0]);
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Icon2.color = Color.green;
+            Icons[1].color = selectedColor[1];
             selectedCharas.Add(charas[1]);
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha3))
         {
-            Icon3.color = Color.blue;
+            Icons[2].color = selectedColor[2];
             selectedCharas.Add(charas[2]);
+        }
+    }
+
+    /// <summary>
+    /// 選択解除
+    /// </summary>
+    void Deselect()
+    {
+        if(selectedCharas.Count == 0) return;
+
+        if(Input.GetKeyDown(KeyCode.Alpha1) && selectedCharas.Count() == 1)
+        {
+            Icons[0].color = intiColor[0];
+            selectedCharas.Add(charas[0]);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha2) && selectedCharas.Count() == 2)
+        {
+            Icons[1].color = intiColor[1];
+            selectedCharas.Add(charas[1]);
+            Debug.Log("選択解除 index1");
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha3) && selectedCharas.Count() == 3)
+        {
+            Icons[2].color = intiColor[2];
+            selectedCharas.Add(charas[2]);
+            Debug.Log("選択解除 index2");
         }
     }
 
@@ -129,6 +166,7 @@ public class DrawSpawn : MonoBehaviour
             {
                 param.Init(true, 0);
             }
+            Icons[0].color = intiColor[0];
             selectedCharas.RemoveAt(0); // 生成されたキャラクターを削除
             isSpawned = true;
             spawnedPosition = GetMouseRaycastHitPosition(); // 生成されたポジションを格納
